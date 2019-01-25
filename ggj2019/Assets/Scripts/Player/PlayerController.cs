@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     { 
     	playerDx = new Vector3(0.0f,0.0f,0.0f);
+    	
     	if (Input.GetKey ("w")) {
             playerDx.z += Time.deltaTime;
         }
@@ -34,10 +35,15 @@ public class PlayerController : MonoBehaviour
             playerDx.x -= Time.deltaTime;
         }
 
+        //normalise velocity vector
         playerDx = Vector3.Normalize(playerDx);
         playerDx = playerDx*playerMaxSpeed;
 
+        //face the camera
         playerDx = Quaternion.LookRotation(transform.forward) * playerDx;
+
+        //Enforce sticking to the floor (may need to change if we use stairs and shit)
+        playerDx = Vector3.ProjectOnPlane(playerDx, Vector3.up);
 
         playerRigidBody.velocity = playerDx;
     }

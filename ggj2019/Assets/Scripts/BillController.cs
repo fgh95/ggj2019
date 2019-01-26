@@ -7,6 +7,8 @@ public class BillController : MonoBehaviour
 	private GameObject player;
 	public bool reachedDestination=false;
 	private UnityEngine.AI.NavMeshAgent agent;
+	private SpriteRenderer[] renderers;
+	
     // Start is called before the first frame update
     
 
@@ -20,8 +22,11 @@ public class BillController : MonoBehaviour
     	
     }
 
+    
+
     void Start()
     {
+    	
          player = GameObject.Find("Player");
          agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
     }
@@ -31,5 +36,12 @@ public class BillController : MonoBehaviour
     {
     	Quaternion pForward = Quaternion.LookRotation(player.transform.forward);
         transform.rotation = pForward;
+    }
+
+    public void changeColor(Color col){
+    	renderers = transform.gameObject.GetComponentsInChildren<SpriteRenderer>();
+    	foreach(SpriteRenderer spr in renderers){
+    		spr.color = col;
+    	}
     }
 }

@@ -192,7 +192,7 @@ GameObject:
   - component: {fileID: 210066489}
   - component: {fileID: 210066490}
   m_Layer: 0
-  m_Name: New Sprite
+  m_Name: MapSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -351,10 +351,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 597236540}
-  - component: {fileID: 597236541}
   - component: {fileID: 597236542}
   - component: {fileID: 597236544}
   - component: {fileID: 597236543}
+  - component: {fileID: 597236541}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -438,8 +438,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 4, z: 1}
+  m_Center: {x: 0, y: -2, z: 0}
 --- !u!1 &1445840002
 GameObject:
   m_ObjectHideFlags: 0

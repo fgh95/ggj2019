@@ -18,6 +18,5 @@ public class BillController : MonoBehaviour
     {
     	Quaternion pForward = Quaternion.LookRotation(player.transform.forward);
         transform.rotation = pForward;
-        agent.SetDestination(player.transform.position);
     }
 }

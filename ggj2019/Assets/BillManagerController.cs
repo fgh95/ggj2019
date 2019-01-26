@@ -9,9 +9,19 @@ public class BillManagerController : MonoBehaviour
 
 	private GameObject[] bills;
 	private GameObject[] billSpawners;
+
+	private List<List<Color>> palettes = new List<List<Color>>();
     // Start is called before the first frame update
     void Start()
     {
+    		//palette construction
+
+ 		palettes.Add(new List<Color>());
+ 		palettes[0].Add(new Color(1.0f,0.38f,0.22f));
+ 		palettes[0].Add(new Color(1.0f,1.0f,0.615f));
+ 		palettes[0].Add(new Color(0.745f,0.921f,0.624f));
+ 		palettes[0].Add(new Color(0.0f,0.639f,0.533f));
+
     	bills = GameObject.FindGameObjectsWithTag("Bill");
     	
     	billSpawners = GameObject.FindGameObjectsWithTag("Spawner");
@@ -25,11 +35,13 @@ public class BillManagerController : MonoBehaviour
     		newBill.gameObject.SetActive(true);
     		UnityEngine.AI.NavMeshAgent bAgent = newBill.gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>();
     		bAgent.SetDestination(billSpawners[targetIndex].transform.parent.Find("EndZone").transform.position);
-    		
+    		BillController bcont = newBill.gameObject.GetComponent<BillController>();
+    		bcont.changeColor(palettes[0][Random.Range(0,palettes[0].Count)]);
 
     	}
     	bills = GameObject.FindGameObjectsWithTag("Bill");
- 
+
+ 	
 
     }
 
@@ -41,12 +53,12 @@ public class BillManagerController : MonoBehaviour
         	if(bcont.reachedDestination){
         		int spawnIndex = Random.Range (0, billSpawners.Length);
         		b.transform.position = billSpawners[spawnIndex].GetComponent<BillSpawnerController>().getSpawnLocation();
-        		b.SetActive(true);
     			int targetIndex = Random.Range (0, billSpawners.Length);
     			while(targetIndex == spawnIndex){
     			targetIndex = Random.Range (0, billSpawners.Length);
     			bcont.reachedDestination = false;
     		}
+    		bcont.changeColor(palettes[0][Random.Range(0,palettes[0].Count)]);
 
     		UnityEngine.AI.NavMeshAgent bAgent = b.gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>();
     		bAgent.SetDestination(billSpawners[targetIndex].transform.parent.Find("EndZone").transform.position);

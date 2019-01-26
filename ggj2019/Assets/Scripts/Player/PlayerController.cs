@@ -44,7 +44,8 @@ public class PlayerController : MonoBehaviour
 
         //Enforce sticking to the floor (may need to change if we use stairs and shit)
         playerDx = Vector3.ProjectOnPlane(playerDx, Vector3.up);
-
+        playerRigidBody.velocity = new Vector3(playerDx.x,0.0f,playerDx.z);
         playerRigidBody.velocity = playerDx;
+
     }
 }

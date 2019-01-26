@@ -5,10 +5,12 @@ using UnityEngine;
 public class BillController : MonoBehaviour
 {
 	private GameObject player;
+	private UnityEngine.AI.NavMeshAgent agent;
     // Start is called before the first frame update
     void Start()
     {
          player = GameObject.Find("Player");
+         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
     }
 
     // Update is called once per frame
@@ -16,5 +18,6 @@ public class BillController : MonoBehaviour
     {
     	Quaternion pForward = Quaternion.LookRotation(player.transform.forward);
         transform.rotation = pForward;
+        agent.SetDestination(player.transform.position);
     }
 }

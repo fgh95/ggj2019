@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class TrainController : MonoBehaviour
 {
+	public int line;
+	public int direction;
+	private GameObject transitions;
+	private TransitionController transitionCtrl;
     // Start is called before the first frame update
     void Start()
     {
-        
+        transitions = GameObject.Find("TransitionManager");
+        transitionCtrl = transitions.GetComponent<TransitionController>();
     }
 
     // Update is called once per frame
@@ -24,7 +29,7 @@ public class TrainController : MonoBehaviour
         	bill.GetComponent<BillController>().reachedDestination = true;
     	}
     	if(other.gameObject.tag == "Player"){
-    		
+    		transitionCtrl.getOnTrain();
     	}
     }
     private void OnTriggerExit(Collider other)

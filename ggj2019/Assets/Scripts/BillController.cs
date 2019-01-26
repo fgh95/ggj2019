@@ -5,8 +5,21 @@ using UnityEngine;
 public class BillController : MonoBehaviour
 {
 	private GameObject player;
+	public bool reachedDestination=false;
 	private UnityEngine.AI.NavMeshAgent agent;
     // Start is called before the first frame update
+    
+
+    void OnEnable()
+    {
+    	transform.Find("Anim").Find("Character").gameObject.GetComponent<Animator>().SetBool("active", false);
+    }
+
+    void OnDisable()
+    {
+    	
+    }
+
     void Start()
     {
          player = GameObject.Find("Player");

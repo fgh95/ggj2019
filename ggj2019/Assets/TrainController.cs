@@ -20,7 +20,8 @@ public class TrainController : MonoBehaviour
     {
         // Change the cube color to green.
         if(other.gameObject.tag == "Bill"){
-        other.transform.gameObject.SetActive(false);
+        GameObject bill = other.transform.gameObject;
+        bill.GetComponent<BillController>().reachedDestination = true;
     }
     }
     private void OnTriggerExit(Collider other)

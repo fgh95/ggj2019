@@ -37,13 +37,15 @@ public class BillManagerController : MonoBehaviour
     void Update()
     {
         foreach(GameObject b in bills){
-        	if(!b.active){
+        	BillController bcont = b.GetComponent<BillController>();
+        	if(bcont.reachedDestination){
         		int spawnIndex = Random.Range (0, billSpawners.Length);
         		b.transform.position = billSpawners[spawnIndex].GetComponent<BillSpawnerController>().getSpawnLocation();
         		b.SetActive(true);
     			int targetIndex = Random.Range (0, billSpawners.Length);
     			while(targetIndex == spawnIndex){
     			targetIndex = Random.Range (0, billSpawners.Length);
+    			bcont.reachedDestination = false;
     		}
 
     		UnityEngine.AI.NavMeshAgent bAgent = b.gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>();

@@ -18,6 +18,7 @@ public class BillSpawnerController : MonoBehaviour
         
     }
 
+
     public Transform SpawnBill()
     {
     	return Instantiate(billPrefab, getSpawnLocation(), Quaternion.identity);

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class BillManagerController : MonoBehaviour
 {
@@ -20,7 +21,7 @@ public class BillManagerController : MonoBehaviour
 
     public void killAllBills(){
     	foreach(GameObject b in bills){
-    		bcont.reachedDestination = true;
+    		b.GetComponent<BillController>().reachedDestination = true;
     	}
     }
 
@@ -98,6 +99,7 @@ public class BillManagerController : MonoBehaviour
         		int spawnIndex = Random.Range (0, activeBillSpawners.Count);
         		b.GetComponent<NavMeshAgent>().enabled = false;
         		b.transform.position = activeBillSpawners[spawnIndex].GetComponent<BillSpawnerController>().getSpawnLocation();
+    			b.GetComponent<NavMeshAgent>().enabled = true;
     			int targetIndex = Random.Range (0, activeBillSpawners.Count);
     			while(targetIndex == spawnIndex){
     				targetIndex = Random.Range (0, activeBillSpawners.Count);

@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ef27aa82b1ab487897d883e8d13b69b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reachedDestination: 0
+  reachedDestination: 1
 --- !u!195 &9052940376615804477
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -247,20 +247,20 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -1
       objectReference: {fileID: 0}
-    - target: {fileID: 4838685346866500, guid: 6412e239b92460a43860474a053b0882, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4641159709155882, guid: 6412e239b92460a43860474a053b0882, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 212018772245919362, guid: 6412e239b92460a43860474a053b0882,
+    - target: {fileID: 4838685346866500, guid: 6412e239b92460a43860474a053b0882, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 212439510882405748, guid: 6412e239b92460a43860474a053b0882,
         type: 3}
       propertyPath: m_SortingOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 212439510882405748, guid: 6412e239b92460a43860474a053b0882,
+    - target: {fileID: 212018772245919362, guid: 6412e239b92460a43860474a053b0882,
         type: 3}
       propertyPath: m_SortingOrder
       value: 0

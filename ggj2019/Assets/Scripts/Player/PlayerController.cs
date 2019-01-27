@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     private Transform playerMap;
 	public float mapRotation = 80.0f;
     public GameObject playerHitbox;
+    public int activeStationModel = 1;
 
 
     // Start is called before the first frame update

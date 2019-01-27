@@ -6,6 +6,7 @@ public class BillSpawnerController : MonoBehaviour
 {
 	public float spread = 1.0f;
 	public Transform billPrefab;
+	public int stationModel;
     // Start is called before the first frame update
     void Start()
     {

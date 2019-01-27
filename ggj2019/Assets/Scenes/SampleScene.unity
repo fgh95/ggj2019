@@ -153,11 +153,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 674996020fb904c67a276b8c27ea1dd2, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 2027d793d9ead4f218a7bccdd0396cd6, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -1357,7 +1357,7 @@ PrefabInstance:
     - target: {fileID: 2602607674527404087, guid: c9d773f0e232c0544b95a6a8ba0527b4,
         type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 2602607674527404087, guid: c9d773f0e232c0544b95a6a8ba0527b4,
         type: 3}
@@ -5428,7 +5428,7 @@ PrefabInstance:
     - target: {fileID: 2309403840634019435, guid: 6dc49ed80066ac245b9c10546d1e7338,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2309403840634019435, guid: 6dc49ed80066ac245b9c10546d1e7338,
         type: 3}
@@ -5852,7 +5852,7 @@ PrefabInstance:
     - target: {fileID: 8753119900969481515, guid: b39e0fcf7badb984091f4851e43016b5,
         type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 8753119900969481515, guid: b39e0fcf7badb984091f4851e43016b5,
         type: 3}

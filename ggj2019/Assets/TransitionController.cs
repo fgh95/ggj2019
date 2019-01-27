@@ -21,6 +21,8 @@ public class TransitionController : MonoBehaviour
     private GameObject player;
     private PlayerController playerCtrl;
     public CanvasGroup transCanvas;
+    public AudioSource bgmSource;
+    public AudioSource trainSoundSource;
     public TextMeshProUGUI transText;
     // Start is called before the first frame update
     void Start()
@@ -51,6 +53,9 @@ public class TransitionController : MonoBehaviour
         	//lerp the white screen
         	transCanvas.alpha = fade;
 
+        	bgmSource.volume = 1.0f - fade;
+
+
         	//text
 
         	transText.text = "welcome back";
@@ -75,6 +80,7 @@ public class TransitionController : MonoBehaviour
         	//lerp the white screen
         	transCanvas.alpha = 0.0f;
 
+			bgmSource.volume = 1.0f;
         	//text
 
         	transText.text = "welcome back";
@@ -106,5 +112,6 @@ public class TransitionController : MonoBehaviour
     	offTrain = false;
     	currentLine = line;
     	currentDirection = direction;
+    	trainSoundSource.Play();
     }
 }

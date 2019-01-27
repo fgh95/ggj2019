@@ -1794,7 +1794,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 016d763d9667e4437b2880ab08b8e430, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minBills: 300
+  minBills: 180
   player: {fileID: 597236540}
   plyrCtrl: {fileID: 0}
 --- !u!1 &1491114931

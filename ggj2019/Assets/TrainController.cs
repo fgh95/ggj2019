@@ -25,7 +25,7 @@ public class TrainController : MonoBehaviour
     {
         // Change the cube color to green.
         if(other.gameObject.tag == "Bill"){
-        GameObject bill = other.transform.gameObject;
+        	GameObject bill = other.transform.gameObject;
         	bill.GetComponent<BillController>().reachedDestination = true;
     	}
     	if(other.gameObject.tag == "Player"){

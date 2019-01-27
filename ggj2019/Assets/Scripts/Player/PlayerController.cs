@@ -7,7 +7,13 @@ public class PlayerController : MonoBehaviour
 	public float playerMaxSpeed = 20.0f;
 	private Rigidbody playerRigidBody;
 	private Vector3 playerDx;
-	
+    private Transform playerMap;
+	public float mapRotation = 80.0f;
+    public GameObject playerHitbox;
+    public int activeStationModel = 0;
+    public int activeStation = 1;
+    public int activeDirection = 1;
+    public int activeLine = 2;
 
 
     // Start is called before the first frame update
@@ -15,6 +21,7 @@ public class PlayerController : MonoBehaviour
     {
         playerRigidBody = GetComponent<Rigidbody>();
         playerDx = new Vector3(0.0f,0.0f,0.0f);
+        playerMap = transform.Find("MapSprite");
     }
 
     // Update is called once per frame
@@ -42,6 +49,10 @@ public class PlayerController : MonoBehaviour
         //face the camera
         playerDx = Quaternion.LookRotation(transform.forward) * playerDx;
 
+        playerHitbox.transform.eulerAngles = new Vector3 (0.0f,playerHitbox.transform.eulerAngles.y,  playerHitbox.transform.eulerAngles.z);
+
+        playerMap.eulerAngles = new Vector3 (mapRotation,playerMap.eulerAngles.y,  playerMap.eulerAngles.z);
+        // playerMap.position = new Vector3 (playerMap.position.x,playerMap.position.y,transform.position.z+2.0f);
         //Enforce sticking to the floor (may need to change if we use stairs and shit)
         playerDx = Vector3.ProjectOnPlane(playerDx, Vector3.up);
         playerRigidBody.velocity = new Vector3(playerDx.x,playerRigidBody.velocity.y,playerDx.z);

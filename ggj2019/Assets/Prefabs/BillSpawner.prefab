@@ -43,5 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0339114c6134c4035b6c0328db6b12de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spread: 0.1
   billPrefab: {fileID: 9052940376615804479, guid: 0b02a87f4886a4d5c83e430cd45e69ad,
     type: 3}
+  stationModel: 0

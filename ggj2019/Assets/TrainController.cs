@@ -29,7 +29,7 @@ public class TrainController : MonoBehaviour
         	bill.GetComponent<BillController>().reachedDestination = true;
     	}
     	if(other.gameObject.tag == "Player"){
-    		transitionCtrl.getOnTrain();
+    		
     	}
     }
     private void OnTriggerExit(Collider other)

@@ -49,6 +49,12 @@ public class NetworkTraverser : MonoBehaviour
         int idx = curr_line.FindIndex(x => x == node);
         // 3. Find the new node depending on your direction and number of stops
         int new_idx = idx + direction * stops;
+        if(new_idx > curr_line.Count - 1){
+        	new_idx = curr_line.Count - 1;
+        }
+        if(new_idx < 0){
+        	new_idx = 0;
+        }
         int new_node = curr_line[new_idx];
         return (new_node);
     }

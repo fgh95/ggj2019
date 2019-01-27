@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class TrainController : MonoBehaviour
 {
+	public int line;
+	public int direction;
+	private GameObject transitions;
+	private TransitionController transitionCtrl;
     // Start is called before the first frame update
     void Start()
     {
-        
+        transitions = GameObject.Find("TransitionManager");
+        transitionCtrl = transitions.GetComponent<TransitionController>();
     }
 
     // Update is called once per frame
@@ -21,8 +26,11 @@ public class TrainController : MonoBehaviour
         // Change the cube color to green.
         if(other.gameObject.tag == "Bill"){
         GameObject bill = other.transform.gameObject;
-        bill.GetComponent<BillController>().reachedDestination = true;
-    }
+        	bill.GetComponent<BillController>().reachedDestination = true;
+    	}
+    	if(other.gameObject.tag == "Player"){
+    		
+    	}
     }
     private void OnTriggerExit(Collider other)
     {
